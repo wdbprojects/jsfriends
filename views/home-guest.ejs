@@ -1,0 +1,82 @@
+<%- include("includes/header.ejs") %>
+<main class="mainContent">
+  <div class="container">
+    <%- include("includes/flash") %>
+    <div class="contentWrapper">
+      <div class="contentWrapper__welcome">
+        <h1>Welcome to JS Friends</h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia
+          tenetur sunt, obcaecati quis numquam natus. Dolores doloremque
+          recusandae voluptate corporis quibusdam sint id laboriosam,
+          exercitationem molestias quos voluptatem quae minus, aut expedita
+          temporibus omnis. Quis dignissimos iure rem cumque dolores rerum fugit
+          veritatis illum, sunt ipsam, possimus, inventore debitis ad.
+        </p>
+      </div>
+      <div class="contentWrapper__register">
+        <%if (regErrors.length > 0) { %>
+        <div class="alert alert__danger alert__small">
+          <ul class="error-list">
+            <% regErrors.forEach((message) => { %>
+            <li><%= message %></li>
+            <% }) %>
+          </ul>
+        </div>
+        <% } %>
+
+        <form
+          action="/register"
+          method="POST"
+          id="registration-form"
+          class="regForm"
+        >
+          <div class="formGroup">
+            <label for="username-register" class="text-muted"
+              ><small>Username</small></label
+            >
+            <input
+              name="username"
+              type="text"
+              id="username-register"
+              class="formControl formControl__block formControl__big"
+              placeholder="Pick a username"
+              autocomplete="off"
+            />
+          </div>
+          <div class="formGroup">
+            <label for="email-register" class="text-muted"
+              ><small>Email</small></label
+            >
+            <input
+              name="email"
+              type="text"
+              id="email-register"
+              class="formControl formControl__block formControl__big"
+              placeholder="you@example.com"
+              autocomplete="off"
+            />
+          </div>
+          <div class="formGroup">
+            <label for="password-register" class="text-muted"
+              ><small>Password</small></label
+            >
+            <input
+              name="password"
+              type="password"
+              id="password-register"
+              class="formControl formControl__block formControl__big"
+              placeholder="Create a password"
+              autocomplete="off"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block btn-big">
+            Register Free
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include("includes/footer.ejs") %>

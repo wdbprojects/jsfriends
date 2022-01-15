@@ -1,0 +1,42 @@
+/* CONTAINER */
+
+.siteWrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: $light1;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  max-width: 1200px;
+  margin: 0px auto;
+  position: relative;
+}
+.contentWrapper {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  );
+  &--narrow {
+    max-width: 732px;
+    margin: 0px auto;
+  }
+  &--extranarrow {
+    max-width: 600px;
+    margin: 0px auto;
+  }
+}
+
+/* CONTAINER */
+
+.mainContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  &__narrow {
+    max-width: 732px;
+    margin: 0px auto;
+  }
+}

@@ -1,0 +1,49 @@
+<%- include("includes/header.ejs") %>
+<main class="mainContent">
+  <div class="container">
+    <%- include("includes/flash") %>
+    <div class="contentWrapper contentWrapper--extranarrow">
+      <div class="contentWrapper__welcome--noresults">
+        <div class="">
+          <a href="/post/<%= post.id %>" class="btn mt-lg">View post</a>
+          <h2 class="bold border-bottom">Update post</h2>
+
+          <form action="/post/<%= post.id %>/edit" method="POST">
+            <div class="formGroup">
+              <label for="post-title" class="text-muted"
+                ><small>Title</small></label
+              >
+              <input
+                required
+                type="text"
+                placeholder=""
+                autocomplete="off"
+                name="title"
+                id="post-title"
+                value="<%= post.title %>"
+                class="formControl formControl__big formControl__block"
+              />
+            </div>
+            <div class="formGroup">
+              <label for="post-body" class="text-muted"
+                ><small>Content</small></label
+              >
+              <textarea
+                required
+                name="body"
+                id="post-body"
+                type="text"
+                rows="10"
+                class="formControl formControl__big formControl__block formControl__body"
+              >
+<%= post.body %></textarea
+              >
+            </div>
+            <button class="btn btn-secondary mt-lg">Save Updates</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include("includes/footer.ejs") %>

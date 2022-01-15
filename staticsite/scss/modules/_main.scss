@@ -1,0 +1,38 @@
+.mainContent {
+  background-color: #ffffff;
+  margin: 0px;
+  padding: 4rem 2rem;
+  flex-grow: 1;
+}
+
+.contentWrapper {
+  &__welcome {
+    min-height: 400px;
+    padding-left: 5rem;
+  }
+  &__welcome--noresults {
+    h2 {
+      font-size: 3.2rem;
+      font-weight: 300;
+    }
+  }
+
+  &__register {
+    min-height: 400px;
+    padding: 2rem 5rem;
+
+    .formGroup {
+      display: block;
+      width: 100%;
+      margin-bottom: 1.6rem;
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 1.6rem;
+      }
+    }
+    button {
+      margin-top: 4rem;
+    }
+  }
+}

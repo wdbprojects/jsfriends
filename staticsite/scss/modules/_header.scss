@@ -1,0 +1,92 @@
+.headerWrapper {
+  background-color: $light3;
+  padding: 1rem;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* LOGO */
+  &__logo {
+    display: flex;
+    align-items: center;
+    padding: 0px 2rem 0px 0px;
+    a {
+      font-size: 2rem;
+      text-decoration: none;
+      color: $dark8;
+    }
+  }
+  /* NAVBAR */
+  &__navbar {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0px 2rem;
+    &--links {
+      list-style: none;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      li {
+        margin-left: 2rem;
+        a {
+          font-size: 1.5rem;
+          text-decoration: none;
+          color: $dark8;
+          &:hover {
+            border-bottom: 1px dotted $dark5;
+          }
+        }
+      }
+    }
+  }
+  /* LOGIN FORM */
+  &__form {
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &--item {
+      margin-right: 1rem;
+      display: block;
+    }
+  }
+  /* LINKS */
+  &__links {
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &--item {
+      margin-right: 1rem;
+      display: block;
+    }
+    .header-search-icon {
+      margin-right: 1rem;
+      color: $dark8;
+      font-size: 1.6rem;
+    }
+    .header-chat-icon {
+      margin-right: 1rem;
+      color: $dark8;
+      font-size: 1.6rem;
+      cursor: pointer;
+    }
+    .header-profile {
+      img {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+      }
+    }
+  }
+}

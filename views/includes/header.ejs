@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+      integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/style.css" />
+    <title>
+      <%= typeof(title) == "undefined" ? "JS Friends" : `${title} - JS Friends` %>
+    </title>
+  </head>
+  <body>
+    <div class="siteWrapper">
+      <header class="headerWrapper">
+        <div class="header container">
+          <div class="header__logo">
+            <a href="/">JS Friends</a>
+          </div>
+          <nav class="header__navbar">
+            <ul class="header__navbar--links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+
+          <% if (user) { %>
+          <div class="header__links">
+            <div class="header__links--item">
+              <a href="#" class="text-white header-search-icon"
+                ><i class="fas fa-search"></i
+              ></a>
+            </div>
+            <div class="header__links--item">
+              <span class="text-white header-chat-icon"
+                ><i class="far fa-comment-dots"></i
+              ></span>
+            </div>
+            <div class="header__links--item">
+              <a href="/profile/<%= user.username %>" class="header-profile">
+                <img src="<%= user.avatar %>" />
+              </a>
+            </div>
+            <div class="header__links--item">
+              <a href="/create-post" class="btn btn-secondary btn-small">
+                Create post
+              </a>
+            </div>
+          </div>
+          <form action="/logout" method="POST" class="header__form">
+            <div class="header__form--item">
+              <button class="btn btn-primary btn-small">Sign out</button>
+            </div>
+          </form>
+          <% } else { %>
+          <form action="/login" method="POST" class="header__form">
+            <div class="header__form--item">
+              <input
+                type="text"
+                name="username"
+                class="formControl"
+                placeholder="Username"
+                autocomplete="off"
+              />
+            </div>
+            <div class="header__form--item">
+              <input
+                type="password"
+                name="password"
+                class="formControl"
+                placeholder="Password"
+                autocomplete="off"
+              />
+            </div>
+            <div class="header__form--item">
+              <button class="btn btn-primary">Sign in</button>
+            </div>
+          </form>
+          <% } %>
+        </div>
+      </header>

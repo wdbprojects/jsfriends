@@ -1,0 +1,120 @@
+.searchOverlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 500;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  background-color: rgba(215, 215, 215, 0.911);
+  visibility: hidden;
+  opacity: 0;
+  transform: scale(1.3);
+  transition: 0.33s visibility ease-in-out,
+    0.33s opacity ease-in-out, 0.33s transform ease-in-out;
+  will-change: visibility, transform, opacity;
+  &.searchOverlay__visible {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__top {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    &--icon {
+      color: $secondary;
+      font-size: 1.4rem;
+      margin: 0px;
+      margin-right: 10px;
+    }
+    &--input {
+      background-color: transparent;
+      border: none;
+      font-size: 1.8rem;
+      outline: none;
+      flex: 1;
+      color: #007bff;
+    }
+    &--close {
+      font-size: 2rem;
+      cursor: pointer;
+      opacity: 0.75;
+      line-height: 1;
+      color: #292929;
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  &__bottom {
+    overflow: auto;
+  }
+}
+
+.liveSearchResults {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  margin-top: 1.8rem;
+  opacity: 0;
+  transition: all 0.3s ease-out;
+  transform: scale(1.7);
+  &.liveSearchResults__visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &__list {
+    background-color: #ffffff;
+    border-radius: 4px;
+    display: block;
+    width: 100%;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    &--title {
+      padding: 1rem;
+      background-color: $primary;
+      color: #ffffff;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      font-size: 1.8rem;
+    }
+    ul {
+      list-style: none;
+      margin: 0px;
+      padding: 0px;
+      li {
+        border-bottom: 1px solid $light3;
+        &:last-child {
+          border-bottom: none;
+          a {
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+          }
+        }
+        a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding: 1.3rem;
+          width: 100%;
+          font-size: 1.6rem;
+          color: $fontColor;
+          img {
+            margin-right: 1rem;
+          }
+          span {
+            margin-left: 0.5rem;
+            color: $dark6;
+
+            font-size: 1.4rem;
+          }
+          &:hover {
+            background-color: $light2;
+          }
+        }
+      }
+    }
+  }
+}

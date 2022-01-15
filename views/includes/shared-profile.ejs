@@ -1,0 +1,17 @@
+<div class="profile__tabHeader mainContainer__narrow">
+  <a
+    href="/profile/<%= profileUsername %>"
+    class="profile__tabHeader--link <%= currentPage === 'posts' ? 'profile__tabHeader--link-active' : '' %>"
+    >Posts: <%= counts.postsCount %></a
+  >
+  <a
+    href="/profile/<%= profileUsername %>/followers"
+    class="profile__tabHeader--link <%= currentPage === 'followers' ? 'profile__tabHeader--link-active' : '' %>"
+    >Followers: <%= counts.followersCount %></a
+  >
+  <a
+    href="/profile/<%= profileUsername %>/following"
+    class="profile__tabHeader--link <%= currentPage === 'following' ? 'profile__tabHeader--link-active' : '' %>"
+    >Following: <%= counts.followingCount %></a
+  >
+</div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.5.0/js/all.js"
+      integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>WDB Blog</title>
+  </head>
+  <body>
+    <div class="siteWrapper">
+      <header class="headerWrapper">
+        <div class="header container">
+          <div class="header__logo">
+            <a href="/">WDB Blog Logo</a>
+          </div>
+          <nav class="header__navbar">
+            <ul class="header__navbar--links">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="header__links">
+            <div class="header__links--item">
+              <a
+                href="#"
+                class="text-white header-search-icon"
+                ><i class="fas fa-search"></i
+              ></a>
+            </div>
+            <div class="header__links--item">
+              <span class="text-white header-chat-icon"
+                ><i class="far fa-comment-dots"></i
+              ></span>
+            </div>
+            <div class="header__links--item">
+              <a href="#" class="header-profile">
+                <img
+                  src="https://gravatar.com/avatar/f64fc44c03a8a7eb1d52502950879659?s=128"
+                />
+              </a>
+            </div>
+            <div class="header__links--item">
+              <a
+                href="#"
+                class="btn btn-secondary btn-small"
+              >
+                Create post
+              </a>
+            </div>
+          </div>
+          <form
+            action="/logout"
+            method="POST"
+            class="header__form"
+          >
+            <div class="header__form--item">
+              <button class="btn btn-primary btn-small">
+                Sign out
+              </button>
+            </div>
+          </form>
+        </div>
+      </header>
+
+      <main class="mainContent">
+        <div class="container">
+          <div
+            class="
+              contentWrapper contentWrapper--extranarrow
+            "
+          >
+            <div class="contentWrapper">
+              <div class="text-center">
+                <h2 class="title-showcase border-bottom">
+                  Sorry, we cannot find that page.
+                </h2>
+                <p class="lead text-muted">
+                  You can always visit the
+                  <a href="/">homepage</a> to get a fresh
+                  start.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <h4>
+            WDB Blog &copy; 2022 - all rights reserved
+          </h4>
+        </div>
+      </footer>
+    </div>
+    <!-- class="container" -->
+  </body>
+</html>

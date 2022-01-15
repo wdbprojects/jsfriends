@@ -1,0 +1,39 @@
+<%- include("includes/header.ejs") %>
+<main class="mainContent">
+  <%- include("includes/flash") %>
+  <div class="mainContainer mainContainer__narrow">
+    <div class="contentWrapper contentWrapper--extranarrow">
+      <div class="contentWrapper post">
+        <div class="post__header">
+          <div class="post__header--title">
+            <div class="post__header--title-text"><%= post.title %></div>
+            <% if (post.postAuthor) { %>
+            <div class="post__header--title-buttons">
+              <a href="/post/<%= post.id %>/edit" class="icon"><i class="fas fa-edit"></i></a>
+              <form action="/post/<%= post.id %>/delete" method="POST">
+                <button class="btnIcon btn-delete">
+                  <i class="fas fa-trash"></i>
+                </button>
+              </form>
+            </div>
+            <% } %>
+          </div>
+          <div class="post__header--meta">
+            <a href="/profile/<%= post.username %>"
+              ><img class="avatar-tiny" src="<%= post.avatar %>"
+            /></a>
+            <span
+              >posted by
+              <a href="/profile/<%= post.username %>""><%= post.username %></a>
+              on <%= post.createdDate.getMonth() + 1 %>/<%=
+              post.createdDate.getDate() %>/<%= post.createdDate.getFullYear()
+              %>
+            </span>
+          </div>
+        </div>
+        <div class="post__body"><%- filterUserHTML(post.body) %></div>
+      </div>
+    </div>
+  </div>
+</main>
+<%- include("includes/footer.ejs") %>
