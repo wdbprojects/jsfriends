@@ -37,6 +37,7 @@ a {
 
 .container {
   max-width: 1200px;
+  min-width: 760px;
   margin: 0px auto;
   position: relative; }
 
