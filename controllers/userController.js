@@ -27,10 +27,10 @@ exports.apiMustBeLoggedIn = function (req, res, next) {
 /* DOES USERNAME EXISTS */
 exports.doesUsernameExist = function (req, res) {
   User.findByUsername(req.body.username)
-    .then(function () {
+    .then(() => {
       res.json(true);
     })
-    .catch(function () {
+    .catch(() => {
       res.json(false);
     });
 };
