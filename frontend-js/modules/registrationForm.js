@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default class RegistrationForm {
   constructor() {
-    this._csrf = document.querySelector('[name]="_csrf"').value;
+    this._csrf = document.querySelector('[name="_csrf"]').value;
     this.form = document.querySelector("#registration-form");
     this.allFields = document.querySelectorAll(
       "#registration-form .formControl",

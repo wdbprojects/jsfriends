@@ -11,6 +11,7 @@
             <div class="post__header--title-buttons">
               <a href="/post/<%= post.id %>/edit" class="icon"><i class="fas fa-edit"></i></a>
               <form action="/post/<%= post.id %>/delete" method="POST">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" />
                 <button class="btnIcon btn-delete">
                   <i class="fas fa-trash"></i>
                 </button>
